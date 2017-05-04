@@ -4,7 +4,7 @@
 
 ### Project ###
 
-title:string image_url:string *voted_for:boolean*
+title:string imageUrl:text imageVideo:string  *voted_for:boolean*
 
 
 ### Vote ###
