@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Full Scaffold: ##
 
-Things you may want to cover:
+### Project ###
 
-* Ruby version
+title:string image_url:string *voted_for:boolean*
 
-* System dependencies
 
-* Configuration
+### Vote ###
 
-* Database creation
+voted_for:boolean
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Devise Model: ##
 
-* Deployment instructions
-
-* ...
+### User ###
