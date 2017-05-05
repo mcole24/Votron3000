@@ -10,6 +10,10 @@
   <%= @project.video_url %>
 </p>
 
+
+<%= video_tag @project.video_url, size: '320x240', controls: true %>
+
+
 <p>
   <strong>Description:</strong>
   <%= @project.description %>
