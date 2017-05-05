@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
+    @votes = Vote
   end
 
   # GET /projects/1
