@@ -60,6 +60,19 @@ class ProjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
+  def add_vote
+    unless params[:project_id].nil?
+      @project = Project.find(params[:project_id])
+      @newVote = Vote.create!(vote_value: true, user_id: current_user.id, project_id: @project.id)
+      respond_to do |format|
+   	    format.html { redirect_to @project, notice: 'Your vote has been recorded'} 
+   	    format.json { render :show, status: :ok, location: @project } 
+ 	    end
+    end
+  end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

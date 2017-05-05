@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>Title:</strong>
   <%= @project.title %>
@@ -11,13 +12,24 @@
 </p>
 
 
-<%= video_tag @project.video_url, size: '320x240', controls: true %>
+
+<iframe src='https://www.youtube.com/watch?v=HbW-Bnm6Ipg' frameborder='0' allowfullscreen></iframe>
+
+
 
 
 <p>
   <strong>Description:</strong>
   <%= @project.description %>
 </p>
+
+<br><br>
+
+
+<div class="voteButton">
+  <%= link_to "<button>Vote for this project</button>".html_safe, add_vote_path(:project_id => @project.id) %>
+</div>
+<br><br>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
