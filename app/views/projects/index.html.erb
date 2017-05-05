@@ -3,12 +3,12 @@
 <h1>Projects</h1>
 
 <div id="gridDisplay">
-  <% @projects.in_groups_of(3, '&nbsp;').each do |group| %>
+  <% @projects.in_groups_of(3, false).each do |group| %>
     <div class='row'>
       <% group.each do |project| %>
         <div class='col-md-4'>
-          <p class="titleGridDisplay"><%= product.title %></p>
-          <%= image_tag(project.images, class: "img-responsive") %>
+          <p class="titleGridDisplay"><%= project.title %></p>
+          <%= image_tag(project.images[0], class: "img-responsive") %>
         </div>
       <% end %>
     </div>
