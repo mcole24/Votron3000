@@ -80,6 +80,10 @@ class ProjectsController < ApplicationController
       @project = Project.find(params[:id])
     end
 
+    def set_all_votes
+      @votes = Vote.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
       params.require(:project).permit(:title, :video_url, :description, :images, :team_name, :vote_count)
