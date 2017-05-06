@@ -27,7 +27,7 @@
 
 
 <div class="voteButton">
-  <%= link_to "<button>Vote for this project</button>".html_safe, add_vote_path(:project_id => @project.id) %>
+  <%= link_to "<button>Vote for this project</button>".html_safe, add_vote_path(@project) %>
 </div>
 <br><br>
 
