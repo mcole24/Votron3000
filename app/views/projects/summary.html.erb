@@ -15,7 +15,7 @@
             <tr>
                 <td><%= project.title %></td>
                 <td><%= project.team_name %></td>
-                <td><%= project.votes.where(:project_id => @project.id, :vote_value => true).count %></td>
+                <!--<td><#%= @votes.where(:project_id => @project.id, :vote_value => true).count %></td>-->
             </tr>
         <% end %>
         

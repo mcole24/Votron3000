@@ -75,7 +75,10 @@ class ProjectsController < ApplicationController
     end
   end
   
-  
+  def summary
+    @projects = Project.all
+    @votes = Vote.all
+  end
 
   
 

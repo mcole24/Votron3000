@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
-  resources :users, only: [:show]
-  resources :votes, except: [:destroy, :edit, :update]
+
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'projects#index'
@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   
   
   resources :projects, except: [:destroy, :edit]
+  resources :users, only: [:show]
+  resources :votes, except: [:destroy, :edit, :update]
   
 end
