@@ -9,6 +9,18 @@
   </head>
 
   <body>
+    
+    
+    <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.email %></strong>.
+      <%= link_to "<button>View User Summary</button>".html_safe, user_path(:id => current_user.id) %> |
+      <%= link_to "<button>Edit profile</button>".html_safe, edit_user_registration_path %> |
+      <%= link_to "<button>Logout</button>".html_safe, destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "<button>Sign up</button>".html_safe, new_user_registration_path %>
+      <%= link_to "<button>Login</button>".html_safe, new_user_session_path %>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>

@@ -27,9 +27,12 @@
 
 
 <div class="voteButton">
-  <%= link_to "<button>Vote for this project</button>".html_safe, add_vote_path(@project) %>
+  <%= link_to "<button>Vote for this project</button>".html_safe, add_vote_path(:project_id => @project.id) %>
 </div>
 <br><br>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
+<div class="voteTotalShow">
+  <p>Votes received for this project: <%= @project.vote_count %></p>
+</div>
+
 <%= link_to 'Back', projects_path %>
