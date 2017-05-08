@@ -32,7 +32,7 @@
 <br><br>
 
 <div class="voteTotalShow">
-  <p>Votes received for this project: <%= @project.vote_count %></p>
+  <p>Votes received for this project: <%= @votes.where(:project_id => @project.id, :vote_value => true).count %></p>
 </div>
 
 <%= link_to 'Back', projects_path %>

@@ -75,6 +75,13 @@ class ProjectsController < ApplicationController
     end
   end
   
+  
+  def show_summary
+    respond_to do |format|
+      format.html {redirect_to '/summary.html.erb'}
+    end
+  end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
