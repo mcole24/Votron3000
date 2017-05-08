@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :update]
-  before_action :set_all_votes, only: [:show, :update]
+  before_action :set_all_votes, only: [:show, :update, :summary]
 
   # GET /projects
   # GET /projects.json
