@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   
   controller :projects do 
     get '/projects/add_vote' => 'projects#add_vote', as: :add_vote
-    #get '/projects/show_summary' => 'projects#show_summary', as: :show_summary
+    get '/summary', to: 'projects#summary'
   end
   
   

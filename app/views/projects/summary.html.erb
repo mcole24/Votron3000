@@ -1,1 +1,29 @@
 <h1>Vote Summary</h1>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Project</th>
+            <th>Team</th>
+            <th>Votes</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <% @projects.each do |project| %>
+        
+            <%= project.title %>
+            <%= project.team_name %>
+            <%= project.votes.where(:project_id => @project.id, :vote_value => true).count %>
+        
+        <% end %>
+        
+    </tbody>
+</table>
+
+
+
+
+
+<%= link_to 'Back', projects_path %>

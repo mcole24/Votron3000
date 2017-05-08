@@ -76,11 +76,7 @@ class ProjectsController < ApplicationController
   end
   
   
-  def show_summary
-    respond_to do |format|
-      format.html {redirect_to '/summary.html.erb'}
-    end
-  end
+
   
 
   private
