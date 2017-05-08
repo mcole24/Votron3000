@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :update]
-  before_action :set_all_votes, only: [:show, :update, :summary]
+  before_action :set_all_votes, only: [:show, :update]
 
   # GET /projects
   # GET /projects.json
@@ -66,6 +66,8 @@ class ProjectsController < ApplicationController
   
   def add_vote
     unless params[:project_id].nil?
+      @thisUser = current_user.id
+      ActiveRecord::Base.connection.execute("DELETE FROM votes WHERE user_id = " + @thisUser.to_s)
       @project = Project.find(params[:project_id])
       @newVote = Vote.create!(vote_value: true, user_id: current_user.id, project_id: @project.id)
       respond_to do |format|

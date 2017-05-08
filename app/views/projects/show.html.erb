@@ -27,7 +27,8 @@
 
 
 <div>
-  <%= link_to "Vote for this project".html_safe, add_vote_path(:project_id => @project.id), :class => 'btn btn-success' %>
+  <%= link_to "Vote for this project".html_safe, add_vote_path(:project_id => @project.id), :class => 'btn btn-success' %><br><br>
+  <p>Note: If you have already voted, voting again will overwrite your previous vote.</p>
 </div>
 <br><br>
 
