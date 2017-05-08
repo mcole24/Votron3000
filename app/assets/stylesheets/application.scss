@@ -13,3 +13,29 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+table {
+    width: 100%;
+}
+
+tr:nth-child(odd) {
+    background: #CCCCCC
+}
+
+tr:nth-child(even) {
+    background: #FFFFFF
+}
+
+th {
+    text-align: center;
+    background: #FFFFFF;
+}
+
+td {
+    text-align: center;
+}
+
+.centered {
+    text-align: center;
+}
