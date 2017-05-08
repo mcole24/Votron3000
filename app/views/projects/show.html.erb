@@ -6,16 +6,35 @@
   <%= @project.title %>
 </p>
 
-<p>
-  <strong>Video url:</strong>
-  <%= @project.video_url %>
-</p>
+
+<!--<iframe src='https://www.youtube.com/watch?v=HbW-Bnm6Ipg' frameborder='0' allowfullscreen></iframe>-->
 
 
 
-<iframe src='https://www.youtube.com/watch?v=HbW-Bnm6Ipg' frameborder='0' allowfullscreen></iframe>
+<br><br>
 
+<% if @project.images.size >= 3 %>
+  <div class="row">
+    <div class="col-md-4"><%= image_tag(@project.images[0]) %></div>
+    <div class="col-md-4"><%= image_tag(@project.images[1]) %></div>
+    <div class="col-md-4"><%= image_tag(@project.images[2]) %></div>
+  </div>
+<% end %>
 
+<% if @project.images.size == 2 %>
+  <div class="row">
+    <div class="col-md-4"><%= image_tag(@project.images[0]) %></div>
+    <div class="col-md-4"><%= image_tag(@project.images[1]) %></div>
+  </div>
+<% end %>
+
+<% if @project.images.size == 1 %>
+  <div class="row">
+    <div class="col-md-4"><%= image_tag(@project.images[0]) %></div>
+  </div>
+<% end %>
+
+<br><br>
 
 
 <p>
