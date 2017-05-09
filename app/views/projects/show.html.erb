@@ -12,9 +12,9 @@
 
 
     <% if @project.images.size >= 3 %>
-        <div class="col-md-4"><%= image_tag(@project.images[0]) %></div>
-        <div class="col-md-4"><%= image_tag(@project.images[1]) %></div>
-        <div class="col-md-4"><%= image_tag(@project.images[2]) %></div>
+        <div class="col-md-4"><%= image_tag(@project.images[0], class: "img-responsive") %></div>
+        <div class="col-md-4"><%= image_tag(@project.images[1], class: "img-responsive") %></div>
+        <div class="col-md-4"><%= image_tag(@project.images[2], class: "img-responsive") %></div>
     <% end %>
 
     <% if @project.images.size == 2 %>
