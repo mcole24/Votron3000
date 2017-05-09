@@ -5,4 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Project.create(title: 'Empire State Building construction', description: 'Pre-OSHA workplace', images: ['empire.jpeg'], team_name: 'Some land developers')
