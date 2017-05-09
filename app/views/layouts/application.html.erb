@@ -13,10 +13,10 @@
     <div class="signedinBanner">
       <% if user_signed_in? %>
         Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to "<button>Logout</button>".html_safe, destroy_user_session_path, method: :delete %>
+        <%= link_to "Logout".html_safe, destroy_user_session_path, method: :delete, :class => 'btn btn-info' %>
       <% else %>
-        <%= link_to "<button>Sign up</button>".html_safe, new_user_registration_path %>
-        <%= link_to "<button>Login</button>".html_safe, new_user_session_path %>
+        <%= link_to "Sign up".html_safe, new_user_registration_path, :class => 'btn btn-info' %>
+        <%= link_to "Login".html_safe, new_user_session_path, :class => 'btn btn-info' %>
       <% end %>
     </div>
     <%= yield %>
