@@ -1,24 +1,29 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+<div class="container">
 
-<div id="gridDisplay">
-  <% @projects.in_groups_of(3, false).each do |group| %>
-    <div class='row'>
-      <% group.each do |project| %>
-        <div class='col-md-4'>
-          <h4 class="titleGridDisplay"><%= project.title %></h4>
-          <% if project.images.size > 0 %>
-            <%= link_to (image_tag(project.images[0], class: "img-responsive")), project %>
-          <% else %>
-            <%=  link_to (image_tag('noimage.jpeg', class: "img-responsive")), project %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
+  <p id="notice"><%= notice %></p>
+
+  <%= link_to 'Vote Summary', "/summary" %><br>
+
+  <h1>Projects</h1>
+
+  <div id="gridDisplay">
+    <% @projects.in_groups_of(3, false).each do |group| %>
+      <div class='row'>
+        <% group.each do |project| %>
+          <div class='col-md-4'>
+            <h4 class="titleGridDisplay"><%= project.title %></h4>
+            <% if project.images.size > 0 %>
+              <%= link_to (image_tag(project.images[0], class: "img-responsive")), project %>
+            <% else %>
+              <%=  link_to (image_tag('noimage.jpeg', class: "img-responsive")), project %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
-<br>
 
-<%= link_to 'New Project', new_project_path %> | <%= link_to 'Vote Summary', "/summary" %>
+
                                                  
