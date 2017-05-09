@@ -1,58 +1,58 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @project.title %>
+  </p>
 
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
-
-
-<!--<iframe src='https://www.youtube.com/watch?v=HbW-Bnm6Ipg' frameborder='0' allowfullscreen></iframe>-->
-
-
-
-<br><br>
-
-<% if @project.images.size >= 3 %>
   <div class="row">
-    <div class="col-md-4"><%= image_tag(@project.images[0]) %></div>
-    <div class="col-md-4"><%= image_tag(@project.images[1]) %></div>
-    <div class="col-md-4"><%= image_tag(@project.images[2]) %></div>
+
+
+    <% if @project.images.size >= 3 %>
+        <div class="col-md-4"><%= image_tag(@project.images[0]) %></div>
+        <div class="col-md-4"><%= image_tag(@project.images[1]) %></div>
+        <div class="col-md-4"><%= image_tag(@project.images[2]) %></div>
+    <% end %>
+
+    <% if @project.images.size == 2 %>
+        <div class="col-md-4"><%= image_tag(@project.images[0]) %></div>
+        <div class="col-md-4"><%= image_tag(@project.images[1]) %></div>
+        <div class="col-md-4"></div>
+    <% end %>
+
+    <% if @project.images.size == 1 %>
+        <div class="col-md-4"><%= image_tag(@project.images[0]) %></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+    <% end %>
+
   </div>
-<% end %>
 
-<% if @project.images.size == 2 %>
-  <div class="row">
-    <div class="col-md-4"><%= image_tag(@project.images[0]) %></div>
-    <div class="col-md-4"><%= image_tag(@project.images[1]) %></div>
+  <br><br>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @project.description %>
+  </p>
+
+  <br><br>
+
+
+  <div>
+    <%= link_to "Vote for this project".html_safe, add_vote_path(:project_id => @project.id), :class => 'btn btn-success' %><br><br>
+    <p>Note: If you have already voted, voting again will overwrite your previous vote.</p>
   </div>
-<% end %>
+  <br><br>
 
-<% if @project.images.size == 1 %>
-  <div class="row">
-    <div class="col-md-4"><%= image_tag(@project.images[0]) %></div>
+  <div class="voteTotalShow">
+    <p>Votes received for this project: <%= @votes.where(:project_id => @project.id, :vote_value => true).count %></p>
   </div>
-<% end %>
-
-<br><br>
 
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<br><br>
+  <%= link_to 'Back', projects_path %>
 
 
-<div>
-  <%= link_to "Vote for this project".html_safe, add_vote_path(:project_id => @project.id), :class => 'btn btn-success' %><br><br>
-  <p>Note: If you have already voted, voting again will overwrite your previous vote.</p>
 </div>
-<br><br>
-
-<div class="voteTotalShow">
-  <p>Votes received for this project: <%= @votes.where(:project_id => @project.id, :vote_value => true).count %></p>
-</div>
-
-<%= link_to 'Back', projects_path %>
