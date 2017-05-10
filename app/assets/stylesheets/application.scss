@@ -15,6 +15,9 @@
 @import "bootstrap";
 
 
+
+
+
 table {
     width: 100%;
 }
@@ -45,13 +48,28 @@ body {
 .container, .container-fluid {
 	background: white;
 	padding: 2em;
-}
-
-.container {
-    border-radius: 15px;
+	border-radius: 15px;
 }
 
 
 .signedinBanner {
 	padding: 1em;
+}
+
+.logo {
+    height: 35%;
+    width: 35%;
+}
+
+
+#clearContainerStyles {
+    background: #56C271;
+    border-radius: 0px;
+    padding: 0em;
+}
+
+
+#hackDayHeader {
+    padding-bottom: 0em;
+    margin-bottom: 0em;
 }

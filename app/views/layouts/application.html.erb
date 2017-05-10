@@ -10,15 +10,39 @@
 
   <body>
     
-    <div class="signedinBanner">
-      <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to "Logout".html_safe, destroy_user_session_path, method: :delete, :class => 'btn btn-info' %>
-      <% else %>
-        <%= link_to "Sign up".html_safe, new_user_registration_path, :class => 'btn btn-info' %>
-        <%= link_to "Login".html_safe, new_user_session_path, :class => 'btn btn-info' %>
-      <% end %>
+    
+    <div class="container" id="clearContainerStyles">
+    
+      
+    
+    
+    <div class="row">
+      <div class="col-md-4"><%= image_tag('Kabbage.png', class: "logo") %></div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4"><br><h1 style="color: white; text-align: center;" id="hackDayHeader">Hack Day 2017</h1></div>
     </div>
+    
     <%= yield %>
+    
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="signedinBanner">
+            <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong>.
+              <%= link_to "Logout".html_safe, destroy_user_session_path, method: :delete, :class => 'btn btn-info' %>
+            <% else %>
+              <%= link_to "Sign up".html_safe, new_user_registration_path, :class => 'btn btn-info' %>
+              <%= link_to "Login".html_safe, new_user_session_path, :class => 'btn btn-info' %>
+            <% end %>
+          </div>
+        </div>
+      <div class="col-md-4"></div>
+    </div>
+    
+
+    
+    
+    </div>
   </body>
 </html>
